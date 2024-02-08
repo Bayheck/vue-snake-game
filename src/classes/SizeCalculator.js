@@ -24,6 +24,11 @@ class SizeCalculator {
   }
 
   static calculateAreaSize(clientWidth, clientHeight) {
+    // Return zero values if clientWidth or clientHeight is negative or zero
+    if (clientWidth <= 0 || clientHeight <= 0) {
+      return { x: 0, y: 0 };
+    }
+
     const fieldSizes = SizeCalculator.getRelevantFieldSize(clientWidth, clientHeight);
     const x = Math.floor(clientWidth / fieldSizes.pureWidth);
     const y = Math.floor(clientHeight / fieldSizes.pureHeight);

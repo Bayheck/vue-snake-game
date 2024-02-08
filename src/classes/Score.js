@@ -54,6 +54,14 @@ class Score {
   increaseNextBreakpoint() {
     this.#state.nextBreakpoint += 1;
   }
+
+  restore() {
+    this.#state.reached = 0;
+    this.#state.speedGradeNumber = 1;
+    this.#state.speedGradeValue = 15;
+    this.#state.rewardAmount = 5;
+    this.#state.nextBreakpoint = 0;
+  }
 }
 
 const score = new Score();
